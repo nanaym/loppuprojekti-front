@@ -22,19 +22,23 @@ export default class ExcistingDates extends Component {
     //  const {dateList} = this.state;
     return (
 
-      <View>
+      <View style={styles.subtitleView}>
         {
           this.state.dateList.map((date, i) => (
-            <ListItem
+            <ListItem onPress={() => {
+              alert(date.name);
+            }}
+              badge={{ value: date.time, textStyle: { color: '#fff' } }}
               key={i}
-              Name={date.name}
-              Restaurant={date.restaurant}
-              Time={date.time}
+              title={date.name}
+              subtitle={date.restaurant}
               bottomDivider
             />
           ))
         }
       </View>
+
+
 
       //   <table>
       //   { this.state.dateList.map(date => 
@@ -45,13 +49,17 @@ export default class ExcistingDates extends Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
-      flex: 1,
-      alignItems: 'center',
-      justifyContent: 'center',
+  subtitleView: {
+    flexDirection: 'col',
+    paddingLeft: 10,
+    paddingTop: 5
   },
-  list: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-}})
+  ratingImage: {
+    height: 19.21,
+    width: 100
+  },
+  ratingText: {
+    paddingLeft: 10,
+    color: 'grey'
+  }
+})
