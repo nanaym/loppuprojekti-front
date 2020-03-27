@@ -10,7 +10,7 @@ const BottomTabNavigator = createBottomTabNavigator({
 Etusivu: ScreenOne,
 Profiili: ScreenTwo,
 Ravintolat: ScreenThree,
-Seura: ScreenFour,
+Lounaslista: ScreenFour,
 })
 
 export default BottomTabNavigator;
