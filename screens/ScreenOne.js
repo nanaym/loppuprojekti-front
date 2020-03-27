@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 import ScreenName from '../components/ScreenName';
+import ExcistingDates from '../components/ExcistingDates';
 
 import { Ionicons } from '@expo/vector-icons';
 
@@ -22,6 +23,7 @@ export default class ScreenOne extends React.Component {
         return (
             <View style={styles.container}>
                 <ScreenName name={'Etusivu'} />
+                {/* <ExcistingDates /> */}
             </View>
         )
     }
