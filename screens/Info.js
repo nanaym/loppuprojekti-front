@@ -20,7 +20,6 @@ export default class Info extends React.Component {
         return (
             <View style={styles.container}>
                 <AppInfo />
-                <ScreenName name={'Info'} />
             </View>
         )
     }
