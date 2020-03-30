@@ -10,7 +10,7 @@ export default class ExcistingDates extends Component {
   }
 
   componentDidMount() {
-    axios.get(`https://lunchfriend.herokuapp.com/api/person`)
+    axios.get(`http://localhost:8000/api/person`)
       .then(res => {
         const dateList = res.data;
         this.setState({ dateList });
@@ -19,10 +19,9 @@ export default class ExcistingDates extends Component {
   }
 
   render() {
-    //  const {dateList} = this.state;
     return (
 
-      <View style={styles.subtitleView}>
+      <View>
         {
           this.state.dateList.map((date, i) => (
             <ListItem onPress={() => {
@@ -37,29 +36,6 @@ export default class ExcistingDates extends Component {
           ))
         }
       </View>
-
-
-
-      //   <table>
-      //   { this.state.dateList.map(date => 
-      //   <tr>{date.name} - {date.restaurant} - {date.time} o'clock</tr>)}
-      //   </table>
     )
   }
 }
-
-const styles = StyleSheet.create({
-  subtitleView: {
-    flexDirection: 'col',
-    paddingLeft: 10,
-    paddingTop: 5
-  },
-  ratingImage: {
-    height: 19.21,
-    width: 100
-  },
-  ratingText: {
-    paddingLeft: 10,
-    color: 'grey'
-  }
-})

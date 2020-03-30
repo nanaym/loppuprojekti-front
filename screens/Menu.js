@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { View, StyleSheet, Text, SafeAreaView, ScrollView } from 'react-native';
 import { ListItem } from 'react-native-elements'
 import { Ionicons } from '@expo/vector-icons';
@@ -19,13 +19,13 @@ const TabIcon = (props) => (
     <Ionicons
         name={'md-flame'}
         size={35}
-        color={props.focused ? 'grey' : 'darkgrey'}
+        color={props.focused ? '#660066' : 'darkgrey'}
     />
 )
 
-export default class ScreenFour extends React.Component {
+export default class Menu extends React.Component {
 
-    
+
     static navigationOptions = {
         tabBarIcon: TabIcon
     };
@@ -33,48 +33,49 @@ export default class ScreenFour extends React.Component {
     renderContent(l) {
         console.log('renderContent kutsuttu')
         return (
-          <WebView source={{ uri: l }}/> 
-          );}
+            <WebView source={{ uri: l }} />
+        );
+    }
 
 
     //klikin jälkeen avautuva functio jonka tehtävä on palauttaa lounaslista kyseiselle elementille
-    onOpen(l){
+    onOpen(l) {
         console.log("onOpen klikattu")
         console.log(l)
-            return ( <WebView source={{ uri: l }}
-                style={{ marginTop: 20 }}
-                javaScriptEnabled={true}
-                domStorageEnabled={true}
-              /> )
-        }
-    
+        return (<WebView source={{ uri: l }}
+            style={{ marginTop: 20 }}
+            javaScriptEnabled={true}
+            domStorageEnabled={true}
+        />)
+    }
 
-render() {
-    
 
-    return (
-        <View>
+    render() {
 
-            <Text></Text>
-            <Text></Text>
-            <Text>Lounaslistat</Text>
-            {this.onOpen()}
-            {
-                list.map((l, i) => (
-                    
-                    <ListItem
-                        key={i}
-                        title={l.name}
-                        subtitle={l.subtitle}
-                        bottomDivider
-                        chevron
-                        onPress={() => this.onOpen(l.uri)}
-                    />
-                ))
-            }
-        </View>
-    )
-}
+
+        return (
+            <View style={styles.container}>
+
+                <Text></Text>
+                <Text></Text>
+                <Text>Lounaslistat</Text>
+                {this.onOpen()}
+                {
+                    list.map((l, i) => (
+
+                        <ListItem
+                            key={i}
+                            title={l.name}
+                            subtitle={l.subtitle}
+                            bottomDivider
+                            chevron
+                            onPress={() => this.onOpen(l.uri)}
+                        />
+                    ))
+                }
+            </View>
+        )
+    }
 }
 
 
