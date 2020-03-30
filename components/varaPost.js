@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState, Component } from 'react';
 import { render } from 'react-dom';
 import { View, Text, Button, StyleSheet, Picker, TextInput } from 'react-native';
 import { Input, Divider } from 'react-native-elements';
@@ -11,28 +11,18 @@ import axios from 'axios';
 export default class PostNew extends Component {
     constructor(props) {
         super(props)
-        this.state = {
-            name: '',
-            restaurant: '',
-            time: ''
-        }
+    };
+    state = {
+        name: '',
+        restaurant: '',
+        time: ''
     }
+    
+
 
     ButtonPress() {
-
-        // function nameInput(e) {
-        //     console.log(e)
-        // }
-        setRestaurant = (e) => {
-            console.log(e + 'restaurant');
-            this.setState({ restaurant: e });
-        }
-
-        setTime = (e) => {
-            console.log(e + 'time');
-            this.setState({ time: e });
-        }
-
+        
+        console.log(this.state);
         if (Input.name == '' || Input.restaurant == '' || Input.time == '') {
             alert('All fields must be filled')
         } else {
@@ -50,8 +40,8 @@ export default class PostNew extends Component {
                 });
         }
     }
-
     render() {
+
         return (
             <View>
 
@@ -59,13 +49,9 @@ export default class PostNew extends Component {
 
                 <Input style={styles.input}
                     placeholder='Enter name'
-                // ref = {nameInput}
                 />
 
-                <Picker
-                    selectedValue={selectedValue}
-                    // style={{ height: 50, width: 150 }}
-                    onValueChange={(itemValue, itemIndex) => setRestaurant(itemValue)}>
+                <Picker>
                     <Picker.Item label="-- Choose restaurant --" value="empty" />
                     <Picker.Item label="Factory" value="factory" />
                     <Picker.Item label="Lucy in the sky" value="lucyinthesky" />
@@ -75,9 +61,9 @@ export default class PostNew extends Component {
                 </Picker>
 
                 <Picker
-                    selectedValue={time}
-                    // style={{ height: 50, width: 150 }}
-                    onValueChange={(itemValue, itemIndex) => setTime(itemValue)}
+                    selectedValue={selectedValue}
+                    style={{ height: 50, width: 150 }}
+                    onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
                 >
                     <Picker.Item label="-- Choose time --" value="empty" />
                     <Picker.Item label="10:30" value="10:30" />
@@ -96,7 +82,7 @@ export default class PostNew extends Component {
 
 
                 <Button style={styles.button}
-                    onPress={() => ButtonPress()}
+                    onPress={() => this.ButtonPress()}
                     title="Add date"
                     color="#660066"
                 />
@@ -104,7 +90,6 @@ export default class PostNew extends Component {
         )
     }
 }
-
 
 const styles = StyleSheet.create({
     button: {

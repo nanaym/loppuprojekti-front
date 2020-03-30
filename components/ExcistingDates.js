@@ -10,7 +10,7 @@ export default class ExcistingDates extends Component {
   }
 
   componentDidMount() {
-    axios.get(`https://lunchfriend.herokuapp.com/api/person`)
+    axios.get(`http://localhost:8000/api/person`)
       .then(res => {
         const dateList = res.data;
         this.setState({ dateList });
