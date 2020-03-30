@@ -21,7 +21,7 @@ export default class ExcistingDates extends Component {
   render() {
     return (
 
-      <View>
+      <View style={styles.text}>
         {
           this.state.dateList.map((date, i) => (
             <ListItem onPress={() => {
@@ -39,3 +39,13 @@ export default class ExcistingDates extends Component {
     )
   }
 }
+
+const styles = StyleSheet.create({
+  text: {
+      alignItems: 'center',
+      justifyContent: 'center',
+      fontSize: 16,
+      color: '#5C5C5C'
+
+  }
+})
