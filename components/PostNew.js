@@ -64,20 +64,22 @@ export default class PostNew extends Component {
                 });
         }
     }
-
     render() {
         
         return (
             
             <View>
-
-                <Divider style={{ backgroundColor: '#660066' }} />
-
+                {/* <Divider style={{ backgroundColor: '#660066' }} /> */}
+                <Text>
+                    {"\n"}
+                </Text>
                 <Input style={styles.input}
                     placeholder='Enter name'
                     onChange = {(text) => this.setName(text)}
                 />
-
+                <Text>
+                    {"\n"}
+                </Text>
                 <Picker
                     // style={{ height: 50, width: 150 }}
                     onValueChange={(itemValue, itemIndex) => this.setRestaurant(itemValue)}>
@@ -88,6 +90,9 @@ export default class PostNew extends Component {
                     <Picker.Item label="Ravintola Keilalahti" value="ravintolakeilalahti" />
                     <Picker.Item label="Sodexo Keilaranta 1" value="sodexokeilaranta1" />
                 </Picker>
+                <Text>
+                    {"\n"}
+                </Text>
 
                 <Picker
                     // style={{ height: 50, width: 150 }}
@@ -105,10 +110,10 @@ export default class PostNew extends Component {
                     <Picker.Item label="12:30" value="12:30" />
                     <Picker.Item label="12:45" value="12:45" />
                     <Picker.Item label="13:00" value="13:00" />
-
                 </Picker>
-
-
+                <Text>
+                    {"\n"}
+                </Text>
                 <Button style={styles.button}
                     onPress={() => this.ButtonPress()}
                     title="Add date"
@@ -118,8 +123,6 @@ export default class PostNew extends Component {
         )
     }
 }
-
-
 const styles = StyleSheet.create({
     button: {
         flex: 1,

@@ -37,7 +37,6 @@ export default class Menu extends React.Component {
         );
     }
 
-
     //klikin jälkeen avautuva functio jonka tehtävä on palauttaa lounaslista kyseiselle elementille
     onOpen(l) {
         console.log("onOpen klikattu")
@@ -49,16 +48,11 @@ export default class Menu extends React.Component {
         />)
     }
 
-
     render() {
-
 
         return (
             <View style={styles.container}>
-
-                <Text></Text>
-                <Text></Text>
-                <Text>Lounaslistat</Text>
+                <Text style={styles.container}>Lounaslistat</Text>
                 {this.onOpen()}
                 {
                     list.map((l, i) => (
@@ -79,7 +73,6 @@ export default class Menu extends React.Component {
 }
 
 
-
 const styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -90,5 +83,8 @@ const styles = StyleSheet.create({
         marginHorizontal: Dimensions.get('window').width,
         marginVertical: Dimensions.get('window').height
     },
+    title: {
+
+    }
 });
 
