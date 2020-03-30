@@ -1,27 +1,26 @@
 import React from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 import ScreenName from '../components/ScreenName';
-
 import { Ionicons } from '@expo/vector-icons';
+import AppInfo from '../components/AppInfo';
 
 const TabIcon = (props) => (
     <Ionicons
-        name={'md-home'}
+        name={'md-apps'}
         size={35}
-        color={props.focused ? 'grey' : 'darkgrey'}
+        color={props.focused ? '#660066' : 'darkgrey'}
     />
 )
 
-export default class ScreenOne extends React.Component {
-
+export default class Info extends React.Component {
     static navigationOptions = {
         tabBarIcon: TabIcon
-
     };
     render() {
         return (
             <View style={styles.container}>
-                <ScreenName name={'Etusivu'} />
+                <AppInfo />
+                <ScreenName name={'Info'} />
             </View>
         )
     }
@@ -34,3 +33,5 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
 })
+
+

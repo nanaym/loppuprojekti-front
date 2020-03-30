@@ -3,23 +3,30 @@ import { View, StyleSheet, Text } from 'react-native';
 import ScreenName from '../components/ScreenName';
 
 import { Ionicons } from '@expo/vector-icons';
+import ExcistingDates from '../components/ExcistingDates';
+import PostNew from '../components/PostNew';
 
 const TabIcon = (props) => (
     <Ionicons
-        name={'ios-restaurant'}
+        name={'md-home'}
         size={35}
-        color={props.focused ? 'grey' : 'darkgrey'}
+        color={props.focused ? '#660066' : 'darkgrey'}
     />
 )
 
-export default class ScreenTwo extends React.Component {
+export default class ScreenOne extends React.Component {
+
     static navigationOptions = {
         tabBarIcon: TabIcon
+
     };
-    render(){
-        return(
+    render() {
+        return (
             <View style={styles.container}>
-                <ScreenName name={'Screen3'} />
+                <PostNew />
+                <ExcistingDates />
+                <ScreenName name={'Etusivu'} />
+
             </View>
         )
     }
@@ -32,5 +39,3 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
 })
-
-
