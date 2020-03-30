@@ -6,9 +6,9 @@ import PostNew from './components/PostNew';
 
 export default function App() {
   return (
-    <View>
+    // <View>
     <AppNavigator />
-    <PostNew />
-    </View>
+    // <PostNew />
+    // </View>
   )
 };

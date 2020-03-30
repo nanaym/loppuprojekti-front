@@ -3,6 +3,8 @@ import { View, StyleSheet, Text } from 'react-native';
 import ScreenName from '../components/ScreenName';
 
 import { Ionicons } from '@expo/vector-icons';
+import PostNew from '../components/PostNew';
+import ExcistingDates from '../components/ExcistingDates';
 
 const TabIcon = (props) => (
     <Ionicons
@@ -21,6 +23,8 @@ export default class ScreenOne extends React.Component {
     render() {
         return (
             <View style={styles.container}>
+                <PostNew/>
+                <ExcistingDates/>
                 <ScreenName name={'Etusivu'} />
             </View>
         )
