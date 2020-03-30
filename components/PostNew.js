@@ -4,6 +4,11 @@ import { View, Text, Button, StyleSheet, Picker, TextInput } from 'react-native'
 import { Input, Divider } from 'react-native-elements';
 import axios from 'axios';
 
+
+
+
+
+
 // const headers = {
 //     'Content-Type': 'application/json',
 //     'Authorization': 'JWT fefege...'
@@ -17,31 +22,40 @@ export default class PostNew extends Component {
             time: ''
         }
     }
+    setName = (event) => {
+        // console.log(event.nativeEvent.text)
+        this.setState({name: event.nativeEvent.text})
+        // console.log(this.state);
+    }
 
-    ButtonPress() {
 
+    setRestaurant = (e) => {
+        // console.log(e);
+        this.setState({ restaurant: e });
+        // console.log(this.state);
+    }
+
+    setTime = (e) => {
+        // console.log(e);
+        this.setState({ time: e });
+        // console.log(this.state);
+    }
+    
+
+    ButtonPress = (body = this.state) => {
+
+    
+     console.log(body)
+     console.log("ButtonPress")
         // function nameInput(e) {
         //     console.log(e)
         // }
-        setRestaurant = (e) => {
-            console.log(e + 'restaurant');
-            this.setState({ restaurant: e });
-        }
+       
 
-        setTime = (e) => {
-            console.log(e + 'time');
-            this.setState({ time: e });
-        }
-
-        if (Input.name == '' || Input.restaurant == '' || Input.time == '') {
+        if (body.name == '' || body.restaurant == '' || body.time == '') {
             alert('All fields must be filled')
         } else {
-            axios.post(`http://localhost:8000/api/person`, {
-                // headers: headers,
-                name: Input.name,
-                restaurant: Input.restaurant,
-                time: Input.time
-            })
+            axios.post(`http://localhost:8000/api/person`, body)
                 .then(function (response) {
                     console.log(response);
                 })
@@ -52,20 +66,21 @@ export default class PostNew extends Component {
     }
 
     render() {
+        
         return (
+            
             <View>
 
                 <Divider style={{ backgroundColor: '#660066' }} />
 
                 <Input style={styles.input}
                     placeholder='Enter name'
-                // ref = {nameInput}
+                    onChange = {(text) => this.setName(text)}
                 />
 
                 <Picker
-                    selectedValue={selectedValue}
                     // style={{ height: 50, width: 150 }}
-                    onValueChange={(itemValue, itemIndex) => setRestaurant(itemValue)}>
+                    onValueChange={(itemValue, itemIndex) => this.setRestaurant(itemValue)}>
                     <Picker.Item label="-- Choose restaurant --" value="empty" />
                     <Picker.Item label="Factory" value="factory" />
                     <Picker.Item label="Lucy in the sky" value="lucyinthesky" />
@@ -75,9 +90,8 @@ export default class PostNew extends Component {
                 </Picker>
 
                 <Picker
-                    selectedValue={time}
                     // style={{ height: 50, width: 150 }}
-                    onValueChange={(itemValue, itemIndex) => setTime(itemValue)}
+                    onValueChange={(itemValue, itemIndex) => this.setTime(itemValue)}
                 >
                     <Picker.Item label="-- Choose time --" value="empty" />
                     <Picker.Item label="10:30" value="10:30" />
@@ -96,7 +110,7 @@ export default class PostNew extends Component {
 
 
                 <Button style={styles.button}
-                    onPress={() => ButtonPress()}
+                    onPress={() => this.ButtonPress()}
                     title="Add date"
                     color="#660066"
                 />
