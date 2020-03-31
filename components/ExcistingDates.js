@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, ScrollView } from 'react-native';
 import axios from 'axios';
 import { render } from 'react-dom';
 import { ListItem } from 'react-native-elements'
@@ -10,7 +10,7 @@ export default class ExcistingDates extends Component {
   }
 
   componentDidMount() {
-    axios.get(`http://localhost:8000/api/person`)
+    axios.get(`http://lunchfriend.herokuapp.com/api/person`)
       .then(res => {
         const dateList = res.data;
         this.setState({ dateList });
@@ -22,6 +22,7 @@ export default class ExcistingDates extends Component {
     return (
 
       <View style={styles.text}>
+        <ScrollView >
         {
           this.state.dateList.map((date, i) => (
             <ListItem onPress={() => {
@@ -35,6 +36,7 @@ export default class ExcistingDates extends Component {
             />
           ))
         }
+        </ScrollView>
       </View>
     )
   }
@@ -42,7 +44,6 @@ export default class ExcistingDates extends Component {
 
 const styles = StyleSheet.create({
   text: {
-      alignItems: 'center',
       justifyContent: 'center',
       fontSize: 16,
       color: '#5C5C5C'

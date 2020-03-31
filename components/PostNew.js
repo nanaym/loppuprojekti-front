@@ -55,7 +55,7 @@ export default class PostNew extends Component {
         if (body.name == '' || body.restaurant == '' || body.time == '') {
             alert('All fields must be filled')
         } else {
-            axios.post(`http://localhost:8000/api/person`, body)
+            axios.post(`http://lunchfriend.herokuapp.com/api/person`, body)
                 .then(function (response) {
                     console.log(response);
                 })
