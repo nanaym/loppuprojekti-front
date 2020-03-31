@@ -41,9 +41,7 @@ export default class PostNew extends Component {
         // console.log(this.state);
     }
     
-
     ButtonPress = (body = this.state) => {
-
     
      console.log(body)
      console.log("ButtonPress")
@@ -51,11 +49,10 @@ export default class PostNew extends Component {
         //     console.log(e)
         // }
        
-
         if (body.name == '' || body.restaurant == '' || body.time == '') {
             alert('All fields must be filled')
         } else {
-            axios.post(`http://lunchfriend.herokuapp.com/api/person`, body)
+            axios.post(`https://lunchfriend.herokuapp.com/api/person`, body)
                 .then(function (response) {
                     console.log(response);
                 })
@@ -80,22 +77,19 @@ export default class PostNew extends Component {
                 <Text>
                     {"\n"}
                 </Text>
-                <Picker
-                    // style={{ height: 50, width: 150 }}
+                <Picker style={{ marginLeft: 20, marginRight: 20}}
                     onValueChange={(itemValue, itemIndex) => this.setRestaurant(itemValue)}>
                     <Picker.Item label="-- Choose restaurant --" value="empty" />
-                    <Picker.Item label="Factory" value="factory" />
-                    <Picker.Item label="Lucy in the sky" value="lucyinthesky" />
-                    <Picker.Item label="Amica Let's Play" value="amicaletsplay" />
-                    <Picker.Item label="Ravintola Keilalahti" value="ravintolakeilalahti" />
-                    <Picker.Item label="Sodexo Keilaranta 1" value="sodexokeilaranta1" />
+                    <Picker.Item label="Factory" value="Factory" />
+                    <Picker.Item label="Lucy in the Sky" value="Lucy in the Sky" />
+                    <Picker.Item label="Amica Let's Play" value="Amica Let's Play" />
+                    <Picker.Item label="Ravintola Keilalahti" value="Ravintola Keilalahti" />
+                    <Picker.Item label="Sodexo Keilaranta 1" value="Sodexo Keilaranta 1" />
                 </Picker>
                 <Text>
                     {"\n"}
                 </Text>
-
-                <Picker
-                    // style={{ height: 50, width: 150 }}
+                <Picker style={{ marginLeft: 20, marginRight: 20}}
                     onValueChange={(itemValue, itemIndex) => this.setTime(itemValue)}
                 >
                     <Picker.Item label="-- Choose time --" value="empty" />

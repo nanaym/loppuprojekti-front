@@ -1,4 +1,4 @@
-{ "rnpm": { "assets": [ "resources/fonts" ] },
+{ 
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "start": "expo start",
@@ -38,7 +38,7 @@
     "react-native-table-component": "^1.2.1",
     "react-native-vector-icons": "^6.6.0",
     "react-native-web": "~0.11.7",
-    "react-native-webview": "^9.0.1",
+    "react-native-webview": "7.4.3",
     "react-native-webview-fullscreen": "^1.0.3",
     "react-navigation": "^4.3.5",
     "react-navigation-tabs": "^2.8.9"

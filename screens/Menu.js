@@ -9,7 +9,7 @@ import HeaderTab from '../navigation/HeaderTab'
 //lista ravintoloista, osoitteista, kotivisuista sekä niiden lounsaslistoista
 const list = [
     { name: "Factory Keilaranta", subtitle: "Keilaranta 6", lunchLink: "https://www.lounaat.info/lounas/ravintola-factory-keilaranta/espoo", uri: "https://ravintolafactory.com/lounasravintolat/ravintolat/espoo-keilaranta/" },
-    { name: "Lucy in the sky", subtitle: "Keilaniementie 1", lunchLink: "https://www.lounaat.info/lounas/lucy-in-the-sky/espoo", uri: "https://www.lucyinthesky.fi/lucy-lunch" },
+    { name: "Lucy in the Sky", subtitle: "Keilaniementie 1", lunchLink: "https://www.lounaat.info/lounas/lucy-in-the-sky/espoo", uri: "https://www.lucyinthesky.fi/lucy-lunch" },
     { name: "Amica Let\'s Play", subtitle: "Keilaranta 15", lunchLink: "https://www.lounaat.info/lounas/amica-lets-play/espoo", uri: "https://www.amica.fi/ravintolat/ravintolat-kaupungeittain/espoo/lets-play/" },
     { name: "Ravintola Keilalahti", subtitle: "Keilaranta 5", lunchLink: "https://www.lounaat.info/lounas/keilaniemi-ravintolat/espoo", uri: "https://vadelmacatering.fi/lounas#lounaslista" },
     { name: "Sodexo Keilaranta", subtitle: "Keilaranta 1", lunchLink: "https://www.lounaat.info/lounas/be-keilaranta/espoo", uri: "https://www.sodexo.fi/ravintolat/espoo/keilaranta-1" }

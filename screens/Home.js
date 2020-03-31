@@ -39,6 +39,13 @@ export default class Home extends React.Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: 'center',
+        // justifyContent: 'center',
     },
+    title: {
+        justifyContent: 'center',
+        fontWeight: 'bold',
+        fontSize: 24,
+        color: '#5C5C5C',
+        margin: 10
+    }
 })
