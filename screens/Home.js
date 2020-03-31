@@ -1,7 +1,6 @@
 import React from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 import ScreenName from '../components/ScreenName';
-
 import { Ionicons } from '@expo/vector-icons';
 import ExcistingDates from '../components/ExcistingDates';
 import PostNew from '../components/PostNew';
@@ -14,7 +13,7 @@ const TabIcon = (props) => (
     />
 )
 
-export default class ScreenOne extends React.Component {
+export default class Home extends React.Component {
 
     static navigationOptions = {
         tabBarIcon: TabIcon
@@ -24,9 +23,10 @@ export default class ScreenOne extends React.Component {
         return (
             <View style={styles.container}>
                 <PostNew />
+                <Text>
+                    {"\n"}
+                </Text>
                 <ExcistingDates />
-                <ScreenName name={'Etusivu'} />
-
             </View>
         )
     }
