@@ -45,6 +45,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     fontSize: 16,
     color: '#5C5C5C'
-
   }
 })
