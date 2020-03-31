@@ -17,7 +17,7 @@ const list = [
 //navigoinnissia näkyvä iconi
 const TabIcon = (props) => (
     <Ionicons
-        name={'md-flame'}
+        name={'ios-restaurant'}
         size={35}
         color={props.focused ? '#660066' : 'darkgrey'}
     />
@@ -52,8 +52,8 @@ export default class Menu extends React.Component {
 
         return (
             <View style={styles.container}>
-                <Text style={styles.container}>Lounaslistat</Text>
-                {this.onOpen()}
+                {/* <Text style={styles.container}>Lounaslistat</Text>
+                {this.onOpen()} */}
                 {
                     list.map((l, i) => (
 
@@ -76,7 +76,6 @@ export default class Menu extends React.Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        alignItems: 'center',
         justifyContent: 'center',
     },
     scrollView: {

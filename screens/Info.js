@@ -6,7 +6,7 @@ import AppInfo from '../components/AppInfo';
 
 const TabIcon = (props) => (
     <Ionicons
-        name={'md-apps'}
+        name={'ios-information-circle'}
         size={35}
         color={props.focused ? '#660066' : 'darkgrey'}
     />

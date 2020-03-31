@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, SafeAreaView } from 'react-native';
 import axios from 'axios';
 import { render } from 'react-dom';
 import { ListItem } from 'react-native-elements'
@@ -10,7 +10,7 @@ export default class ExcistingDates extends Component {
   }
 
   componentDidMount() {
-    axios.get(`https://lunchfriend.herokuapp.com/api/person`)
+    axios.get(`https://lunchfriend.herokuapp.com/api/restaurants`)
       .then(res => {
         const dateList = res.data;
         this.setState({ dateList });
@@ -27,10 +27,10 @@ export default class ExcistingDates extends Component {
             <ListItem onPress={() => {
               alert(date.name);
             }}
-              badge={{ value: date.time, textStyle: { color: '#fff' } }}
+              badge={{ value: date.time, textStyle: { backgroundColor: '#660066', fontSize: 16 } }}
               key={i}
-              title={date.name}
-              subtitle={date.restaurant}
+              title={date.restaurant}
+              subtitle={date.name}
               bottomDivider
             />
           ))
@@ -42,10 +42,9 @@ export default class ExcistingDates extends Component {
 
 const styles = StyleSheet.create({
   text: {
-      alignItems: 'left',
-      justifyContent: 'center',
-      fontSize: 16,
-      color: '#5C5C5C'
+    justifyContent: 'center',
+    fontSize: 16,
+    color: '#5C5C5C'
 
   }
 })

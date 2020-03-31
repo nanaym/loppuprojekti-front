@@ -68,8 +68,7 @@ export default class PostNew extends Component {
                 <Text>
                     {"\n"}
                 </Text>
-                <Picker
-                    // style={{ height: 50, width: 150 }}
+                <Picker style={{ marginLeft: 20, marginRight: 20}}
                     onValueChange={(itemValue, itemIndex) => this.setRestaurant(itemValue)}>
                     <Picker.Item label="-- Choose restaurant --" value="empty" />
                     <Picker.Item label="Factory" value="Factory" />
@@ -81,8 +80,7 @@ export default class PostNew extends Component {
                 <Text>
                     {"\n"}
                 </Text>
-                <Picker
-                    // style={{ height: 50, width: 150 }}
+                <Picker style={{ marginLeft: 20, marginRight: 20}}
                     onValueChange={(itemValue, itemIndex) => this.setTime(itemValue)}
                 >
                     <Picker.Item label="-- Choose time --" value="empty" />
