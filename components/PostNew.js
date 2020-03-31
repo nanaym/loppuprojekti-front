@@ -17,35 +17,33 @@ export default class PostNew extends Component {
         }
     }
     setName = (event) => {
-        console.log(event.nativeEvent.text)
-        this.setState({ name: event.nativeEvent.text })
-        console.log(this.state);
+        // console.log(event.nativeEvent.text)
+        this.setState({name: event.nativeEvent.text})
+        // console.log(this.state);
     }
     setRestaurant = (e) => {
-        console.log(e);
+        // console.log(e);
         this.setState({ restaurant: e });
-        console.log(this.state);
+        // console.log(this.state);
     }
     setTime = (e) => {
-        console.log(e);
+        // console.log(e);
         this.setState({ time: e });
-        console.log(this.state);
+        // console.log(this.state);
     }
-    ButtonPress() {
-        console.log(this.state + '   buttonPress')
+    
+    ButtonPress = (body = this.state) => {
+    
+     console.log(body)
+     console.log("ButtonPress")
         // function nameInput(e) {
         //     console.log(e)
         // }
-
-        if (this.state.name == '' || this.state.restaurant == '' || this.state.time == '') {
+       
+        if (body.name == '' || body.restaurant == '' || body.time == '') {
             alert('All fields must be filled')
         } else {
-            axios.post(`http://localhost:8000/api/person`, {
-                // headers: headers,
-                name: this.state.name,
-                restaurant: this.state.restaurant,
-                time: this.state.time
-            })
+            axios.post(`https://lunchfriend.herokuapp.com/api/person`, body)
                 .then(function (response) {
                     console.log(response);
                 })
@@ -55,7 +53,9 @@ export default class PostNew extends Component {
         }
     }
     render() {
+        
         return (
+            
             <View>
                 {/* <Divider style={{ backgroundColor: '#660066' }} /> */}
                 <Text>
@@ -63,7 +63,7 @@ export default class PostNew extends Component {
                 </Text>
                 <Input style={styles.input}
                     placeholder='Enter name'
-                    onChange={(text) => this.setName(text)}
+                    onChange = {(text) => this.setName(text)}
                 />
                 <Text>
                     {"\n"}
@@ -72,16 +72,15 @@ export default class PostNew extends Component {
                     // style={{ height: 50, width: 150 }}
                     onValueChange={(itemValue, itemIndex) => this.setRestaurant(itemValue)}>
                     <Picker.Item label="-- Choose restaurant --" value="empty" />
-                    <Picker.Item label="Factory" value="factory" />
-                    <Picker.Item label="Lucy in the sky" value="lucyinthesky" />
-                    <Picker.Item label="Amica Let's Play" value="amicaletsplay" />
-                    <Picker.Item label="Ravintola Keilalahti" value="ravintolakeilalahti" />
-                    <Picker.Item label="Sodexo Keilaranta 1" value="sodexokeilaranta1" />
+                    <Picker.Item label="Factory" value="Factory" />
+                    <Picker.Item label="Lucy in the Sky" value="Lucy in the Sky" />
+                    <Picker.Item label="Amica Let's Play" value="Amica Let's Play" />
+                    <Picker.Item label="Ravintola Keilalahti" value="Ravintola Keilalahti" />
+                    <Picker.Item label="Sodexo Keilaranta 1" value="Sodexo Keilaranta 1" />
                 </Picker>
                 <Text>
                     {"\n"}
                 </Text>
-
                 <Picker
                     // style={{ height: 50, width: 150 }}
                     onValueChange={(itemValue, itemIndex) => this.setTime(itemValue)}

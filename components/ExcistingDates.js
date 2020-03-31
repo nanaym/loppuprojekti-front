@@ -10,7 +10,7 @@ export default class ExcistingDates extends Component {
   }
 
   componentDidMount() {
-    axios.get(`http://localhost:8000/api/person`)
+    axios.get(`https://lunchfriend.herokuapp.com/api/person`)
       .then(res => {
         const dateList = res.data;
         this.setState({ dateList });
@@ -42,7 +42,7 @@ export default class ExcistingDates extends Component {
 
 const styles = StyleSheet.create({
   text: {
-      alignItems: 'center',
+      alignItems: 'left',
       justifyContent: 'center',
       fontSize: 16,
       color: '#5C5C5C'
