@@ -42,7 +42,7 @@ export default class ExcistingDates extends Component {
 
 const styles = StyleSheet.create({
   text: {
-      alignItems: 'left',
+      // alignItems: 'center',
       justifyContent: 'center',
       fontSize: 16,
       color: '#5C5C5C'

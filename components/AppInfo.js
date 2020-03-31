@@ -45,20 +45,20 @@ export default class AppInfo extends Component {
 
 const styles = StyleSheet.create({
     title: {
-        alignItems: 'center',
+        // alignItems: 'center',
         justifyContent: 'center',
         fontWeight: 'bold',
         fontSize: 24,
         color: '#5C5C5C'
     },
     text: {
-        alignItems: 'center',
+        // alignItems: 'center',
         justifyContent: 'center',
         fontSize: 16,
         color: '#5C5C5C'
     },
     linkText: {
-        alignItems: 'center',
+        // alignItems: 'center',
         justifyContent: 'center',
         fontSize: 16,
         color: '#5C5C5C',

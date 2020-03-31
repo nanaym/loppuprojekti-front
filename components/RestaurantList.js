@@ -30,7 +30,7 @@ export default class RestaurantList extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        alignItems: 'center',
+        // alignItems: 'center',
         justifyContent: 'center',
     },
 })
@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
 
 const list = [
     { name: "Factory Keilaranta", lunchLink: "https://www.lounaat.info/lounas/ravintola-factory-keilaranta/espoo", uri: "https://ravintolafactory.com/lounasravintolat/ravintolat/espoo-keilaranta/" },
-    { name: "Lucy in the sky", lunchLink: "https://www.lounaat.info/lounas/lucy-in-the-sky/espoo", uri: "https://www.lucyinthesky.fi/lucy-lunch" },
+    { name: "Lucy in the Sky", lunchLink: "https://www.lounaat.info/lounas/lucy-in-the-sky/espoo", uri: "https://www.lucyinthesky.fi/lucy-lunch" },
     { name: "Amica Let\'s Play", lunchLink: "https://www.lounaat.info/lounas/amica-lets-play/espoo", uri: "https://www.amica.fi/ravintolat/ravintolat-kaupungeittain/espoo/lets-play/" },
     { name: "Ravintola Keilalahti", lunchLink: "https://www.lounaat.info/lounas/keilaniemi-ravintolat/espoo", uri: "https://vadelmacatering.fi/lounas#lounaslista" },
     { name: "Sodexo Keilaranta 1", lunchLink: "https://www.lounaat.info/lounas/be-keilaranta/espoo", uri: "https://www.sodexo.fi/ravintolat/espoo/keilaranta-1" }
