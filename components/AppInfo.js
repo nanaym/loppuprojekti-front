@@ -6,7 +6,7 @@ import { ActivityIndicator } from 'react-native';
 export default class AppInfo extends Component {
     render() {
         return (
-            <View>
+            <View style={styles.view}>
                 <Text style={styles.title}>About this app</Text>
 
 
@@ -44,6 +44,9 @@ export default class AppInfo extends Component {
 }
 
 const styles = StyleSheet.create({
+    view: {
+        margin: 20
+    },
     title: {
         // alignItems: 'center',
         justifyContent: 'center',
