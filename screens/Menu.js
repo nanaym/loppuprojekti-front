@@ -4,6 +4,7 @@ import { ListItem } from 'react-native-elements'
 import { Ionicons } from '@expo/vector-icons';
 import WebView from 'react-native-webview';
 import { Dimensions } from 'react-native';
+import HeaderTab from '../navigation/HeaderTab';
 
 //lista ravintoloista, osoitteista, kotivisuista sekä niiden lounsaslistoista
 const list = [
@@ -17,7 +18,7 @@ const list = [
 //navigoinnissia näkyvä iconi
 const TabIcon = (props) => (
     <Ionicons
-        name={'md-flame'}
+        name={'ios-restaurant'}
         size={35}
         color={props.focused ? '#660066' : 'darkgrey'}
     />
@@ -52,6 +53,7 @@ export default class Menu extends React.Component {
 
         return (
             <View style={styles.container}>
+                <HeaderTab/>
                 {/* <Text style={styles.container}>Lounaslistat</Text> */}
                 {/* {this.onOpen()} */}
                 {
@@ -77,7 +79,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         // alignItems: 'center',
-        justifyContent: 'center',
+        // justifyContent: 'center',
     },
     scrollView: {
         marginHorizontal: Dimensions.get('window').width,

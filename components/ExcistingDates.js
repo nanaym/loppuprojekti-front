@@ -10,7 +10,7 @@ export default class ExcistingDates extends Component {
   }
 
   componentDidMount() {
-    axios.get(`https://lunchfriend.herokuapp.com/api/person`)
+    axios.get(`https://lunchfriend.herokuapp.com/api/restaurants`)
       .then(res => {
         const dateList = res.data;
         this.setState({ dateList });
@@ -25,12 +25,12 @@ export default class ExcistingDates extends Component {
         {
           this.state.dateList.map((date, i) => (
             <ListItem onPress={() => {
-              alert(date.name);
+              // alert(date.name);
             }}
               badge={{ value: date.time, textStyle: { color: '#fff' } }}
               key={i}
-              title={date.name}
-              subtitle={date.restaurant}
+              title={date.restaurant}
+              subtitle={date.name}
               bottomDivider
             />
           ))
