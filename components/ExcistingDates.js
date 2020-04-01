@@ -25,7 +25,7 @@ export default class ExcistingDates extends Component {
         {
           this.state.dateList.map((date, i) => (
             <ListItem onPress={() => {
-              alert(date.name);
+              // alert(date.name);
             }}
               badge={{ value: date.time, textStyle: { backgroundColor: '#660066', fontSize: 16 } }}
               key={i}

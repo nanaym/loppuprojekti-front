@@ -3,6 +3,7 @@ import { View, StyleSheet, Text } from 'react-native';
 import ScreenName from '../components/ScreenName';
 import { Ionicons } from '@expo/vector-icons';
 import AppInfo from '../components/AppInfo';
+import HeaderTab from '../navigation/HeaderTab';
 
 const TabIcon = (props) => (
     <Ionicons
@@ -19,6 +20,7 @@ export default class Info extends React.Component {
     render() {
         return (
             <View style={styles.container}>
+                <HeaderTab/>
                 <AppInfo />
             </View>
         )
@@ -29,7 +31,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         // alignItems: 'center',
-        justifyContent: 'center',
+        // justifyContent: 'center',
     },
 })
 
