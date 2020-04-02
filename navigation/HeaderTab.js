@@ -15,9 +15,9 @@ export default class HeaderTab extends Component {
         return (
             <Header
                 placement="left"
-                leftComponent={{ icon: 'restaurant-outline', color: 'darkgrey' }}
+                leftComponent={{ icon: 'menu', color: 'darkgrey' }}
                 centerComponent={{ text: 'LunchApp', style: { color: 'darkgrey' } }}
-                rightComponent={{ icon: 'icon-app_logo_1-1', color: 'darkgrey' }}
+                rightComponent={{ icon: 'home', color: 'darkgrey' }}
                 containerStyle={{
                     backgroundColor: '#660066',
                     justifyContent: 'space-around',

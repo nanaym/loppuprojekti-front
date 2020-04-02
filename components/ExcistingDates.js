@@ -3,38 +3,82 @@ import { View, Text, StyleSheet, ScrollView, SafeAreaView } from 'react-native';
 import axios from 'axios';
 import { render } from 'react-dom';
 import { ListItem } from 'react-native-elements'
+import DialogInput from 'react-native-dialog-input';
 
 export default class ExcistingDates extends Component {
-  state = {
-    dateList: []
+  constructor(props) {
+    super(props)
+    this.state = {
+      date: {
+        id: '',
+        name: '',
+        restaurant: '',
+        time: ''
+      },
+      isDialogVisible: false
+    }
+  }
+  // addName(date) {
+  //   console.log("addName kutsuttu");
+  //   console.log(date);
+  //   return (<DialogInput isDialogVisible={this.state.isDialogVisible}
+  //     title={"Join date this date with " + date.name}
+  //     message={"Attending in" + date.restaurant + " at " + date.time}
+  //     hintInput={"Insert name"}
+  //     submitInput={(newName) => { this.joinDate(newName) }}
+  //     closeDialog={() => { this.showDialog(false) }}>
+  //   </DialogInput>)
+  // }
+  showDialog(boolean){
+    return this.setState({isDialogVisible: boolean});
   }
 
-  componentDidMount() {
-    axios.get(`https://lunchfriend.herokuapp.com/api/restaurants`)
-      .then(res => {
-        const dateList = res.data;
-        this.setState({ dateList });
-        console.log(dateList);
+  joinDate = (newName) => {
+    let id = this.state.date.id
+    console.log(newName)
+    console.log(this.state.date)
+    console.log(id)
+    let post = { id: id, name: this.state.date.name + ', ' + newName, restaurant: this.state.date.restaurant, time: this.state.date.time }
+    axios.put(`https://lunchfriend.herokuapp.com/api/person/${id}`, post)
+      .then((response) => {
+        console.log(response);
+        this.showDialog(false)
+        this.props.fetchAllRestaurants();
       })
+      .catch((error) => {
+        console.log(error);
+      });
   }
+
 
   render() {
+    const showDialog = this.state.isDialogVisible
+
+
     return (
 
       <View style={styles.text}>
+                <DialogInput isDialogVisible={showDialog}
+                title={"Have lunch with awesome " + this.state.date.name}
+                message={"Attending in " + this.state.date.restaurant + " at " + this.state.date.time}
+                hintInput={"Insert name"}
+                submitInput={(newName) => { this.joinDate(newName) }}
+                closeDialog={() => { this.showDialog(false) }}>
+              </DialogInput>
         <ScrollView >
-        {
-          this.state.dateList.map((date, i) => (
-            <ListItem onPress={() => {
-              alert(date.name);
-            }}
-              badge={{ value: date.time, textStyle: { backgroundColor: '#660066', fontSize: 16 } }}
-              key={i}
-              title={date.restaurant}
-              subtitle={date.name}
-              bottomDivider
-            />
-          ))
+          { //LISÄÄ SORT DATELIST TÄHÄN
+            this.props.dateList.map((date, i) => (
+              <ListItem onPress={() => {
+                this.showDialog(true), this.setState({ date: date });
+              }}
+                badge={{ value: date.time, textStyle: { backgroundColor: '#660066', fontSize: 16 } }}
+                key={i}
+                title={date.restaurant}
+                subtitle={date.name}
+                bottomDivider
+              />
+              )
+            )
         }
         </ScrollView>
       </View>

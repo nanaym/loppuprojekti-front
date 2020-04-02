@@ -53,8 +53,9 @@ export default class PostNew extends Component {
             alert('All fields must be filled')
         } else {
             axios.post(`https://lunchfriend.herokuapp.com/api/person`, body)
-                .then(function (response) {
+                .then((response) => {
                     console.log(response);
+                    this.props.fetchAllRestaurants();
                 })
                 .catch(function (error) {
                     console.log(error);
@@ -78,6 +79,7 @@ export default class PostNew extends Component {
                     {"\n"}
                 </Text>
                 <Picker style={{ marginLeft: 20, marginRight: 20}}
+                    selectedValue={this.state.restaurant}
                     onValueChange={(itemValue, itemIndex) => this.setRestaurant(itemValue)}>
                     <Picker.Item label="-- Choose restaurant --" value="empty" />
                     <Picker.Item label="Factory" value="Factory" />
@@ -89,7 +91,9 @@ export default class PostNew extends Component {
                 <Text>
                     {"\n"}
                 </Text>
-                <Picker style={{ marginLeft: 20, marginRight: 20}}
+                <Picker 
+                    selectedValue={this.state.time}
+                    style={{ marginLeft: 20, marginRight: 20}}
                     onValueChange={(itemValue, itemIndex) => this.setTime(itemValue)}
                 >
                     <Picker.Item label="-- Choose time --" value="empty" />
