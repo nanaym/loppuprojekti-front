@@ -10,8 +10,11 @@ export default class HeaderTab extends Component {
         return (
             <Header
                 placement="left"
+
+          
                 leftComponent={{ icon: 'menu', color: 'white' }}
-                centerComponent={{ text: 'Lunchie', style: { color: 'white', fontSize: 22, fontWeight: 'bold', fontFamily: 'monospace' } }}                containerStyle={{
+                centerComponent={{ text: 'Lunchie', style: { color: 'white', fontSize: 22, fontWeight: 'bold', fontFamily: 'monospace' } }}
+          containerStyle={{
                     backgroundColor: '#660066',
                     justifyContent: 'space-around',
                 }}
@@ -19,4 +22,3 @@ export default class HeaderTab extends Component {
         )
     }
 }
-
