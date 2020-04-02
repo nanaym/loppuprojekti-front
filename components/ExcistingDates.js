@@ -47,6 +47,6 @@ export default class ExcistingDates extends Component {
 const styles = StyleSheet.create({
   listItem: {
     fontSize: 16,
-    color: '#5C5C5C',
+    color: '#5C5C5C'
   }
 })
