@@ -4,7 +4,7 @@ import { ListItem } from 'react-native-elements'
 import { Ionicons } from '@expo/vector-icons';
 import WebView from 'react-native-webview';
 import { Dimensions } from 'react-native';
-import HeaderTab from '../navigation/HeaderTab';
+import HeaderTab from '../navigation/HeaderTab'
 
 //lista ravintoloista, osoitteista, kotivisuista sekä niiden lounsaslistoista
 const list = [
@@ -37,11 +37,6 @@ export default class Menu extends React.Component {
         console.log("onOpen klikattu")
         console.log(l)
         return Linking.openURL(l);
-        // return (<WebView source={{ uri: l }}
-        //     style={{ marginTop: 20 }}
-        //     javaScriptEnabled={true}
-        //     domStorageEnabled={true}
-        // />)
     }
     render() {
         return (
@@ -49,7 +44,6 @@ export default class Menu extends React.Component {
                 <HeaderTab />
                 <Text style={styles.title}>Links to menus:</Text>
                 <Text style={styles.text}>(Opens in a browser)</Text>
-                {/* {this.onOpen()} */}
                 {
                     list.map((l, i) => (
                         <ListItem
@@ -78,11 +72,11 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         fontSize: 20,
         color: '#5C5C5C',
-        margin: 10
+        margin: 20
     },
     text: {
         fontSize: 16,
         color: '#5C5C5C',
-        margin: 10
+        margin: 20
     }
 });

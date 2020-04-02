@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet, Text } from 'react-native';
+import { View, StyleSheet, Text, ScrollView } from 'react-native';
 import ScreenName from '../components/ScreenName';
 import { Ionicons } from '@expo/vector-icons';
 import AppInfo from '../components/AppInfo';
@@ -22,8 +22,10 @@ export default class Info extends React.Component {
             <View style={styles.container}>
 
                 <HeaderTab />
-
+                <ScrollView>
                 <AppInfo />
+                </ScrollView>
+
             </View>
         )
     }
