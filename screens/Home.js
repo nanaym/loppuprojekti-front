@@ -4,8 +4,8 @@ import ScreenName from '../components/ScreenName';
 import { Ionicons } from '@expo/vector-icons';
 import ExcistingDates from '../components/ExcistingDates';
 import PostNew from '../components/PostNew';
+// import { ScrollView } from 'react-native-gesture-handler';
 import HeaderTab from '../navigation/HeaderTab';
-
 
 const TabIcon = (props) => (
     <Ionicons
@@ -31,7 +31,8 @@ export default class Home extends React.Component {
                 <ScrollView>
                     <ExcistingDates />
                 </ScrollView>
-            </View>
+            
+                </View>
         )
     }
 }

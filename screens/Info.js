@@ -5,7 +5,6 @@ import { Ionicons } from '@expo/vector-icons';
 import AppInfo from '../components/AppInfo';
 import HeaderTab from '../navigation/HeaderTab';
 
-
 const TabIcon = (props) => (
     <Ionicons
         name={'ios-information-circle'}
@@ -21,6 +20,7 @@ export default class Info extends React.Component {
     render() {
         return (
             <View style={styles.container}>
+
                 <HeaderTab />
                 <ScrollView>
                 <AppInfo />

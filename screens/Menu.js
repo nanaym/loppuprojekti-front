@@ -4,7 +4,8 @@ import { ListItem } from 'react-native-elements'
 import { Ionicons } from '@expo/vector-icons';
 import WebView from 'react-native-webview';
 import { Dimensions } from 'react-native';
-import HeaderTab from '../navigation/HeaderTab'
+import HeaderTab from '../navigation/HeaderTab';
+
 //lista ravintoloista, osoitteista, kotivisuista sekä niiden lounsaslistoista
 const list = [
     { name: "Factory Keilaranta", subtitle: "Keilaranta 6", lunchLink: "https://www.lounaat.info/lounas/ravintola-factory-keilaranta/espoo", uri: "https://ravintolafactory.com/lounasravintolat/ravintolat/espoo-keilaranta/" },
@@ -48,7 +49,6 @@ export default class Menu extends React.Component {
                 <HeaderTab />
                 <Text style={styles.title}>Links to menus:</Text>
                 <Text style={styles.text}>(Opens in a browser)</Text>
-
                 {/* {this.onOpen()} */}
                 {
                     list.map((l, i) => (
@@ -69,7 +69,6 @@ export default class Menu extends React.Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        // justifyContent: 'center',
     },
     scrollView: {
         marginHorizontal: Dimensions.get('window').width,
