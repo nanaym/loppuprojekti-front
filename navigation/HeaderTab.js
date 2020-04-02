@@ -9,9 +9,8 @@ export default class HeaderTab extends Component {
     render() {
         return (
             <Header
-                placement="left"
-                leftComponent={{ icon: 'menu', color: 'white' }}
-                centerComponent={{ text: 'Lunchie', style: { color: 'white', fontSize: 22, fontWeight: 'bold', fontFamily: 'monospace' } }}                containerStyle={{
+                placement="center"
+                centerComponent={{ text: 'Lunchie', style: { color: 'white', fontSize: 30, fontWeight: 'bold', fontFamily: 'monospace' } }}                containerStyle={{
                     backgroundColor: '#660066',
                     justifyContent: 'space-around',
                 }}
