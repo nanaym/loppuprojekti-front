@@ -3,6 +3,7 @@ import { render } from 'react-dom';
 import { View, Text, Button, StyleSheet, Picker, TextInput } from 'react-native';
 import { Input, Divider } from 'react-native-elements';
 import axios from 'axios';
+
 // const headers = {
 //     'Content-Type': 'application/json',
 //     'Authorization': 'JWT fefege...'
@@ -58,16 +59,12 @@ export default class PostNew extends Component {
             
             <View>
                 {/* <Divider style={{ backgroundColor: '#660066' }} /> */}
-                <Text>
-                    {"\n"}
-                </Text>
+
                 <Input style={styles.input}
                     placeholder='Enter name'
                     onChange = {(text) => this.setName(text)}
                 />
-                <Text>
-                    {"\n"}
-                </Text>
+
                 <Picker style={{ marginLeft: 20, marginRight: 20}}
                     onValueChange={(itemValue, itemIndex) => this.setRestaurant(itemValue)}>
                     <Picker.Item label="-- Choose restaurant --" value="empty" />
@@ -77,9 +74,7 @@ export default class PostNew extends Component {
                     <Picker.Item label="Ravintola Keilalahti" value="Ravintola Keilalahti" />
                     <Picker.Item label="Sodexo Keilaranta 1" value="Sodexo Keilaranta 1" />
                 </Picker>
-                <Text>
-                    {"\n"}
-                </Text>
+
                 <Picker style={{ marginLeft: 20, marginRight: 20}}
                     onValueChange={(itemValue, itemIndex) => this.setTime(itemValue)}
                 >
@@ -96,12 +91,10 @@ export default class PostNew extends Component {
                     <Picker.Item label="12:45" value="12:45" />
                     <Picker.Item label="13:00" value="13:00" />
                 </Picker>
-                <Text>
-                    {"\n"}
-                </Text>
+
                 <Button style={styles.button}
                     onPress={() => this.ButtonPress()}
-                    title="Add date"
+                    title="Start a date"
                     color="#660066"
                 />
             </View>
@@ -110,8 +103,8 @@ export default class PostNew extends Component {
 }
 const styles = StyleSheet.create({
     button: {
-        flex: 1,
-        padding: 5
+        padding: 5,
+        marginLeft: 50
     },
     text: {
         fontSize: 16,
