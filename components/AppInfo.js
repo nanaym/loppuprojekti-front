@@ -13,17 +13,26 @@ export default class AppInfo extends Component {
                 <Text style={styles.text}>
                     {"\n"}
                     {"\n"}
-                    The final project of Academy's Spring 2020 JavaScript class.
+                    "Lunchie" is the final project of Academy's Spring 2020 JavaScript class.
                     {"\n"}
                     {"\n"}
                     Team:
                     {"\n"}
-                    Hanna Valli
+                    <Text style={styles.linkText}
+                        onPress={() => Linking.openURL('https://www.linkedin.com/in/hanna-valli/')}>
+                        Hanna Valli
+                        </Text>
                     {"\n"}
-                    Oskari Auvinen
+                    <Text style={styles.linkText}
+                        onPress={() => Linking.openURL('https://www.linkedin.com/in/oskari-auvinen-70083619b/')}>
+                        Oskari Auvinen
+                        </Text>
                     {"\n"}
-                    Nana Martin
-                    </Text>
+                    <Text style={styles.linkText}
+                        onPress={() => Linking.openURL('https://www.linkedin.com/in/nana-martin-b9170219b/')}>
+                        Nana Martin
+                        </Text>
+                </Text>
 
                 {/* <Image source={require('../images/nana.png')} /> */}
 
@@ -48,17 +57,15 @@ const styles = StyleSheet.create({
         margin: 20
     },
     title: {
-        // alignItems: 'center',
-        justifyContent: 'center',
         fontWeight: 'bold',
-        fontSize: 24,
-        color: '#5C5C5C'
+        fontSize: 20,
+        color: '#5C5C5C',
     },
     text: {
         // alignItems: 'center',
         justifyContent: 'center',
         fontSize: 16,
-        color: '#5C5C5C'
+        color: '#5C5C5C'    
     },
     linkText: {
         // alignItems: 'center',

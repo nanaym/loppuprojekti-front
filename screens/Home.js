@@ -24,12 +24,11 @@ export default class Home extends React.Component {
     render() {
         return (
             <View style={styles.container}>
-                <HeaderTab/>
+                <HeaderTab />
+                <Text style={styles.title}>Start a new date!</Text>
                 <PostNew />
-                <Text>
-                    {"\n"}
-                </Text>
-               <ScrollView>
+                <Text style={styles.title}>Or join another date:</Text>
+                <ScrollView>
                     <ExcistingDates />
                 </ScrollView>
             
@@ -41,9 +40,11 @@ export default class Home extends React.Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-
-        // alignItems: 'center',
-        // justifyContent: 'center',
-
+    },
+    title: {
+        fontWeight: 'bold',
+        fontSize: 20,
+        color: '#5C5C5C',
+        margin: 10
     }
 })

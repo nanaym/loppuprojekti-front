@@ -20,7 +20,9 @@ export default class Info extends React.Component {
     render() {
         return (
             <View style={styles.container}>
-                <HeaderTab/>
+
+                <HeaderTab />
+
                 <AppInfo />
             </View>
         )
@@ -30,8 +32,6 @@ export default class Info extends React.Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        // alignItems: 'center',
-        // justifyContent: 'center',
     },
 })
 

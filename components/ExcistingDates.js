@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { View, Text, StyleSheet, ScrollView, SafeAreaView } from 'react-native';
 import axios from 'axios';
 import { render } from 'react-dom';
-import { ListItem } from 'react-native-elements'
+import { ListItem } from 'react-native-elements';
+import moment from "moment";
 
 export default class ExcistingDates extends Component {
   state = {
@@ -18,16 +19,19 @@ export default class ExcistingDates extends Component {
       })
   }
 
+
   render() {
+
     return (
 
       <View style={styles.text}>
         {
           this.state.dateList.map((date, i) => (
-            <ListItem onPress={() => {
-              // alert(date.name);
-            }}
-              badge={{ value: date.time, textStyle: { backgroundColor: '#660066', fontSize: 16 } }}
+            <ListItem style={styles.listItem}
+              onPress={() => {
+                alert(date.name);
+              }}
+              badge={{ value: moment(new Date(date.time)).format('LTS'), textStyle: { backgroundColor: '#660066', fontSize: 16 } }}
               key={i}
               title={date.restaurant}
               subtitle={date.name}
@@ -41,8 +45,7 @@ export default class ExcistingDates extends Component {
 }
 
 const styles = StyleSheet.create({
-  text: {
-    justifyContent: 'center',
+  listItem: {
     fontSize: 16,
     color: '#5C5C5C'
   }
