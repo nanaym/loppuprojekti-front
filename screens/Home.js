@@ -25,9 +25,9 @@ export default class Home extends React.Component {
         return (
             <View style={styles.container}>
                 <HeaderTab />
-                <Text style={styles.title}>Start a new date!</Text>
+                <Text style={styles.title}>Set a new date!</Text>
                 <PostNew />
-                <Text style={styles.title}>Or join another date:</Text>
+                <Text style={styles.title}>Or click and join:</Text>
                 <ScrollView>
                     <ExcistingDates />
                 </ScrollView>

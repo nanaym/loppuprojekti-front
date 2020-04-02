@@ -4,10 +4,6 @@ import { View, Text, Button, StyleSheet, Picker, TextInput } from 'react-native'
 import { Input, Divider } from 'react-native-elements';
 import axios from 'axios';
 
-// const headers = {
-//     'Content-Type': 'application/json',
-//     'Authorization': 'JWT fefege...'
-// }
 export default class PostNew extends Component {
     constructor(props) {
         super(props)

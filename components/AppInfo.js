@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import { Text, View, StyleSheet, Linking, Image } from 'react-native'
 
-import { ActivityIndicator } from 'react-native';
-
 export default class AppInfo extends Component {
     render() {
         return (
@@ -46,8 +44,6 @@ export default class AppInfo extends Component {
                         Nana Martin
                         </Text>
 
-                {/* <Image source={require('../images/nana.png')} /> */}
-
                 <Text style={styles.text}>
                     {"\n"}
                     Logo:
@@ -62,7 +58,6 @@ export default class AppInfo extends Component {
                     onPress={() => Linking.openURL('https://www.yasminagodden.com/')}>
                     Yasmina Godden
                         </Text>
-                {/* <Text style={styles.bottomText}></Text> */}
             </View>
 
         )
