@@ -4,6 +4,7 @@ import axios from 'axios';
 import { render } from 'react-dom';
 import { ListItem } from 'react-native-elements'
 import DialogInput from 'react-native-dialog-input';
+import moment from "moment";
 
 export default class ExcistingDates extends Component {
   constructor(props) {
@@ -18,17 +19,7 @@ export default class ExcistingDates extends Component {
       isDialogVisible: false
     }
   }
-  // addName(date) {
-  //   console.log("addName kutsuttu");
-  //   console.log(date);
-  //   return (<DialogInput isDialogVisible={this.state.isDialogVisible}
-  //     title={"Join date this date with " + date.name}
-  //     message={"Attending in" + date.restaurant + " at " + date.time}
-  //     hintInput={"Insert name"}
-  //     submitInput={(newName) => { this.joinDate(newName) }}
-  //     closeDialog={() => { this.showDialog(false) }}>
-  //   </DialogInput>)
-  // }
+  
   showDialog(boolean){
     return this.setState({isDialogVisible: boolean});
   }
@@ -87,8 +78,7 @@ export default class ExcistingDates extends Component {
 }
 
 const styles = StyleSheet.create({
-  text: {
-    justifyContent: 'center',
+  listItem: {
     fontSize: 16,
     color: '#5C5C5C'
   }
