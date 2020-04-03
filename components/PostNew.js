@@ -14,35 +14,32 @@ export default class PostNew extends Component {
         }
     }
     setName = (event) => {
-        // console.log(event.nativeEvent.text)
-        this.setState({name: event.nativeEvent.text})
-        // console.log(this.state);
+        this.setState({ name: event.nativeEvent.text })
     }
+
+
     setRestaurant = (e) => {
-        // console.log(e);
         this.setState({ restaurant: e });
-        // console.log(this.state);
+
     }
+
     setTime = (e) => {
-        // console.log(e);
         this.setState({ time: e });
-        // console.log(this.state);
     }
-    
+
     ButtonPress = (body = this.state) => {
-    
-     console.log(body)
-     console.log("ButtonPress")
-        // function nameInput(e) {
-        //     console.log(e)
-        // }
-       
+
+        console.log(body)
+        console.log("ButtonPress")
+
         if (body.name == '' || body.restaurant == '' || body.time == '') {
             alert('All fields must be filled')
         } else {
             axios.post(`https://lunchfriend.herokuapp.com/api/person`, body)
-                .then(function (response) {
+                .then((response) => {
                     console.log(response);
+                    alert("Thank you for setting a new date :]]");
+                    this.props.fetchAllRestaurants();
                 })
                 .catch(function (error) {
                     console.log(error);
@@ -50,28 +47,30 @@ export default class PostNew extends Component {
         }
     }
     render() {
-        
+
         return (
-            
+
             <View>
-                {/* <Divider style={{ backgroundColor: '#660066' }} /> */}
+                <Text style={styles.title}>Set a new date!</Text>
 
                 <Input style={styles.input}
                     placeholder='Enter name'
-                    onChange = {(text) => this.setName(text)}
+                    onChange={(text) => this.setName(text)}
                 />
 
-                <Picker style={{ marginLeft: 20, marginRight: 20}}
+                <Picker style={{ marginLeft: 20, marginRight: 20 }}
+                    selectedValue={this.state.restaurant}
                     onValueChange={(itemValue, itemIndex) => this.setRestaurant(itemValue)}>
                     <Picker.Item label="-- Choose restaurant --" value="empty" />
+                    <Picker.Item label="Amica Let's Play" value="Amica Let's Play" />
                     <Picker.Item label="Factory" value="Factory" />
                     <Picker.Item label="Lucy in the Sky" value="Lucy in the Sky" />
-                    <Picker.Item label="Amica Let's Play" value="Amica Let's Play" />
                     <Picker.Item label="Ravintola Keilalahti" value="Ravintola Keilalahti" />
                     <Picker.Item label="Sodexo Keilaranta 1" value="Sodexo Keilaranta 1" />
                 </Picker>
-
-                <Picker style={{ marginLeft: 20, marginRight: 20}}
+                <Picker
+                    selectedValue={this.state.time}
+                    style={{ marginLeft: 20, marginRight: 20 }}
                     onValueChange={(itemValue, itemIndex) => this.setTime(itemValue)}
                 >
                     <Picker.Item label="-- Choose time --" value="empty" />
@@ -93,6 +92,8 @@ export default class PostNew extends Component {
                     title="Start a date"
                     color="#660066"
                 />
+                <Text style={styles.title}>Or click and join a date:</Text>
+
             </View>
         )
     }
@@ -102,14 +103,16 @@ const styles = StyleSheet.create({
         padding: 5,
         marginLeft: 50
     },
-    text: {
-        fontSize: 16,
-        fontWeight: 'bold'
-    },
     input: {
         fontSize: 16
     },
     picker: {
         fontSize: 26
+    },
+    title: {
+        fontWeight: 'bold',
+        fontSize: 24,
+        color: '#5C5C5C',
+        margin: 20
     }
 });

@@ -4,8 +4,8 @@ import ScreenName from '../components/ScreenName';
 import { Ionicons } from '@expo/vector-icons';
 import ExcistingDates from '../components/ExcistingDates';
 import PostNew from '../components/PostNew';
-// import { ScrollView } from 'react-native-gesture-handler';
-import HeaderTab from '../navigation/HeaderTab';
+import HeaderTab from '../navigation/HeaderTab'
+import axios from 'axios';
 
 const TabIcon = (props) => (
     <Ionicons
@@ -16,20 +16,50 @@ const TabIcon = (props) => (
 )
 
 export default class Home extends React.Component {
+    constructor(props){
+        super(props)
+      this.state = {
+        loading: false,
+        dateList: [],
+
+      }
+    }
+      
 
     static navigationOptions = {
         tabBarIcon: TabIcon
 
     };
+
+    componentDidMount() {
+        this.fetchAllRestaurants();
+      }
+    
+      fetchAllRestaurants = () => {
+        axios.get(`https://lunchfriend.herokuapp.com/api/restaurants`)
+          .then(res => {
+            const dateList = res.data;
+            const alterList = function () {
+              for (let b = 0; b < dateList.length; b++) {
+                dateList[b] = { name: dateList[b].name, restaurant: dateList[b].restaurant, time: dateList[b].time };
+              }
+              return dateList;
+            }
+            this.setState({ dateList });
+          
+    
+            console.log("home.js rivi 51 ",dateList);
+    
+          })
+      }
+    
     render() {
         return (
             <View style={styles.container}>
                 <HeaderTab />
-                <Text style={styles.title}>Set a new date!</Text>
-                <PostNew />
-                <Text style={styles.title}>Or click and join:</Text>
+                <PostNew  fetchAllRestaurants={this.fetchAllRestaurants}/>
                 <ScrollView>
-                    <ExcistingDates />
+                <ExcistingDates loading={this.state.loading} dateList={this.state.dateList} fetchAllRestaurants={this.fetchAllRestaurants}/>
                 </ScrollView>
             
                 </View>
@@ -40,11 +70,5 @@ export default class Home extends React.Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-    },
-    title: {
-        fontWeight: 'bold',
-        fontSize: 20,
-        color: '#5C5C5C',
-        margin: 20
     }
 })
