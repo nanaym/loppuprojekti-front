@@ -11,43 +11,84 @@ export default class AppInfo extends Component {
 
                 <Text style={styles.text}>
                     {"\n"}
-                    "Lunchie" is a final project of Academy's Spring 2020 JavaScript class.
+                    "Lunchie" is one of the final projects of Academy's Spring 2020 JavaScript class.
                     {"\n"}
-                    {"\n"}
-                    Team:
                     {"\n"}
                 </Text>
-                <Image
-                    source={require('../images/hanna.png')}
-                    style={{ width: 150, height: 150 }}
-                />
+                <Text style={styles.subtitle}>
+                    Team:
+                    {"\n"}
+
+                </Text>
+
+                <View style={styles.viewImg}>
+
+                    <Image
+                        source={require('../images/hanna.png')}
+                        style={{ width: 150, height: 150 }}
+                    />
                     <Text style={styles.linkText}
                         onPress={() => Linking.openURL('https://www.linkedin.com/in/hanna-valli/')}>
+                        {"\n"}
+                        {"\n"}
                         Hanna Valli
-                    {"\n"}
-                        </Text>
+                        {"\n"}
+                        {"\n"}
+                        {"\n"}
+
+
+                    </Text>
+                </View>
+
+                <View style={styles.viewImg}>
+
                     <Image
-                    source={require('../images/oskari.png')}
-                    style={{ width: 150, height: 150 }}
-                />
+                        source={require('../images/oskari.png')}
+                        style={{ width: 150, height: 150 }}
+                    />
+
                     <Text style={styles.linkText}
                         onPress={() => Linking.openURL('https://www.linkedin.com/in/oskari-auvinen-70083619b/')}>
-                        Oskari Auvinen
-                    {"\n"}
-                        </Text>
+                        {"\n"}
+                        {"\n"}
+                    Oskari Auvinen
+                        {"\n"}
+                        {"\n"}
+                        {"\n"}
+
+
+                    </Text>
+
+                </View>
+
+                <View style={styles.viewImg}>
+
                     <Image
-                    source={require('../images/nana.png')}
-                    style={{ width: 150, height: 150 }}
-                />
+                        source={require('../images/nana.png')}
+                        style={{ width: 150, height: 150 }}
+                    />
+
                     <Text style={styles.linkText}
                         onPress={() => Linking.openURL('https://www.linkedin.com/in/nana-martin-b9170219b/')}>
-                        Nana Martin
-                        </Text>
-                <Text style={styles.text}>
+                        {"\n"}
+                        {"\n"}
+                    Nana Martin
+                        {"\n"}
+                        {"\n"}
+
+                    </Text>
+                </View>
+
+                <Text style={styles.subtitle}>
+                    {"\n"}
                     {"\n"}
                     Logo:
                     {"\n"}
                 </Text>
+
+                <View style={styles.viewImg}>
+
+
                 <Image
                     source={require('../images/logo_white.png')}
                     style={{ width: 150, height: 150 }}
@@ -55,8 +96,14 @@ export default class AppInfo extends Component {
 
                 <Text style={styles.linkText}
                     onPress={() => Linking.openURL('https://www.yasminagodden.com/')}>
+                    {"\n"}
+                    {"\n"}
                     Yasmina Godden
-                        </Text>
+                    {"\n"}
+                    {"\n"}
+
+                </Text>
+                </View>
             </View>
 
         )
@@ -67,22 +114,32 @@ const styles = StyleSheet.create({
     view: {
         margin: 20
     },
+    viewImg: {
+        flexDirection: 'row',
+    },
     bottomText: {
         marginBottom: 60
     },
     title: {
         fontWeight: 'bold',
-        fontSize: 20,
+        fontSize: 24,
         color: '#5C5C5C',
     },
+    subtitle: {
+        fontWeight: 'bold',
+        fontSize: 20,
+        color: '#5C5C5C'
+    },
     text: {
-        fontSize: 16,
+        fontSize: 18,
         color: '#5C5C5C'
     },
     linkText: {
-        fontSize: 16,
-        color: '#5C5C5C',
         fontWeight: 'bold',
-        fontStyle: 'italic'
+        fontSize: 18,
+        color: '#660066',
+        fontStyle: 'italic',
+        margin: 20
+
     }
 })

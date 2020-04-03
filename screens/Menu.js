@@ -70,9 +70,10 @@ const styles = StyleSheet.create({
     },
     title: {
         fontWeight: 'bold',
-        fontSize: 20,
+        fontSize: 24,
         color: '#5C5C5C',
-        margin: 20
+        marginTop: 20,
+        marginLeft: 20
     },
     text: {
         fontSize: 16,
