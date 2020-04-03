@@ -57,9 +57,7 @@ export default class Home extends React.Component {
         return (
             <View style={styles.container}>
                 <HeaderTab />
-                <Text style={styles.title}>Set a new date!</Text>
                 <PostNew  fetchAllRestaurants={this.fetchAllRestaurants}/>
-                <Text style={styles.title}>Or click and join a date:</Text>
                 <ScrollView>
                 <ExcistingDates loading={this.state.loading} dateList={this.state.dateList} fetchAllRestaurants={this.fetchAllRestaurants}/>
                 </ScrollView>
@@ -72,11 +70,5 @@ export default class Home extends React.Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-    },
-    title: {
-        fontWeight: 'bold',
-        fontSize: 20,
-        color: '#5C5C5C',
-        margin: 20
     }
 })

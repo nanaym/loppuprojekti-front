@@ -54,7 +54,8 @@ export default class ExcistingDates extends Component {
                 message={"Attending in " + this.state.date.restaurant + " at " + this.state.date.time}
                 hintInput={"Insert name"}
                 submitInput={(newName) => { this.joinDate(newName) }}
-                closeDialog={() => { this.showDialog(false) }}>
+                closeDialog={() => { this.showDialog(false) }}
+                submitText = {"Join"}>
               </DialogInput>
         <ScrollView >
           { //LISÄÄ SORT DATELIST TÄHÄN
